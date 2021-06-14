@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: {
@@ -27,11 +27,11 @@ module.exports = {
       {
         test: /\.js$/i,
         exclude: /node_modules/,
-       
+
         use: {
           loader: "babel-loader",
-          options:{
-            presets:['@babel/preset-env']
+          options: {
+            presets: ['@babel/preset-env']
           }
         }
       },
@@ -68,18 +68,26 @@ module.exports = {
       }
     ]
   },
-  plugins: [    
+  plugins: [
     new HtmlWebpackPlugin({
-        title:'空氣品質API_bootstrap-v5',
-        template: './src/index.html',
-        filename: 'main.html',
-        chunks:['vendor','app']
+      title: '空氣品質API_bootstrap-v5',
+      template: './src/index.html',
+      filename: 'main.html',
+      chunks: ['vendor', 'app']
     }),
+    new Dotenv() 
   ],
   devtool: "source-map",
-  devServer:{
-    compress:true,
+  devServer: {
+    compress: true,
     contentBase: path.join(__dirname, 'dist'),
-    port:5050
-  }
+    port: 5050
+  },
+
+  // resolve: {
+  //   fallback: {
+  //     "path": require.resolve("path-browserify")
+  //   }
+  // }
+
 }
