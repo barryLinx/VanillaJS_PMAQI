@@ -69,8 +69,7 @@ $colors: (
   "cyan":       $cyan,
   "white":      $white,
   "gray":       $gray-600,
-  "gray-dark":  $gray-800,
-  
+  "gray-dark":  $gray-800,  
 ) !default;
 // scss-docs-end colors-map
 
@@ -436,6 +435,9 @@ $aspect-ratios: (
 
 // scss-docs-start font-variables
 // stylelint-disable value-keyword-case
+// font-variables
+$font-family-Noto: 'Noto Sans TC';
+$font-family-open: 'Open Sans', sans-serif;;
 $font-family-sans-serif:      system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 // stylelint-enable value-keyword-case

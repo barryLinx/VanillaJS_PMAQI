@@ -1,0 +1,101 @@
+// scss-docs-start gray-color-variables
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+// scss-docs-end gray-color-variables
+
+// scss-docs-start color-variables
+$blue:    #0d6efd !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #d63384 !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #198754 !default;
+$cyan:    #0dcaf0 !default;
+$tea-100:#95F084;
+$yellow-100:#FFE695;
+$orange-100:#FFAF6A;
+$red-100:#FF5757;
+$purple-100:#9777FF;
+$pink-800:#AD1774;
+$gray-bg:#F0F0F0;
+
+
+// scss-docs-start theme-color-variables
+$primary:       $blue !default;
+$secondary:     $gray-600 !default;
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $gray-100 !default;
+$dark:          $gray-900 !default;
+// scss-docs-end theme-color-variables
+
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark,  
+  "gray-700":   $gray-bg,
+  "good":       $tea-100,
+  "warning-100":$yellow-100,
+  "warning-200":$orange-100,
+  "serious":    $red-100,
+  "sserious":   $purple-100,
+  "harm":       $pink-800       
+) !default;
+
+
+// scss-docs-start table-loop
+$table-variants: (
+  "primary":    shift-color($primary, $table-bg-scale),
+  "secondary":  shift-color($secondary, $table-bg-scale),
+  "success":    shift-color($success, $table-bg-scale),
+  "info":       shift-color($info, $table-bg-scale),
+  "warning":    shift-color($warning, $table-bg-scale),
+  "danger":     shift-color($danger, $table-bg-scale),
+  "light":      $light,
+  "dark":       $dark,
+  "gray-700":   $gray-bg,
+  "good":       $tea-100,
+  "warning-100":$yellow-100,
+  "warning-200":$orange-100,
+  "serious":    $red-100,
+  "sserious":   $purple-100,
+  "harm":       $pink-800     
+) !default;
+// scss-docs-end table-loop
+
+// scss-docs-start border-variables
+$border-widths: (
+  1: 1px,
+  2: 2px,
+  3: 3px,
+  4: 4px,
+  5: 5px,
+  6: 6px,
+  7: 7px,
+  8: 8px,
+  9: 9px,
+  10:10px
+) !default;
+
+
+// font-variables
+$font-family-Noto: 'Noto Sans TC', sans-serif;
+$font-family-open: 'Open Sans', sans-serif;
