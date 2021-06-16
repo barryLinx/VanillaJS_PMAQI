@@ -7,3 +7,14 @@ hr.dotted{
 ul.area-detailed{
   list-style: none;
 }
+
+small{
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.btn-ef{
+  cursor: pointer;
+  &:hover{
+    transform: scale(1.2);
+  }
+}
