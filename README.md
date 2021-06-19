@@ -15,7 +15,7 @@
 ## 主要練習目的
 
 * js 開發思維 
-> 資料Data 事件 Event 介面 UI
+> 資料Data、事件Event、介面UI
 * Promise 、 XMLHttpRequest 合併使用
 
 
