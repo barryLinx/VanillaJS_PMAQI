@@ -97,7 +97,7 @@ function SiteTitleUI(data) {
   );
 
   thSite.textContent = data[0].SiteName;
-  thaqi.textContent = data[0].AQI;
+  thaqi.innerHTML = data[0].AQI ? data[0].AQI : '<div class="spinner-border border-4  text-dark" role="status"></div>';
   let status = aqicolor(data[0].Status);
  // console.log("thaqi_match", thaqi.className.match(bgClass));
   thaqi.classList.remove(thaqi.className.match(bgClass));
@@ -118,7 +118,10 @@ function SiteNameUI(data) {
     str += `<div class="btn-ef col-lg-6" data-site=${d.SiteName}>
               <div class="d-flex justify-content-center text-center" >
                  <div  class="site_name fs-1 p-4 border border-end-0  border-5 border-dark bg-white w-100 ff-NotoSans">${d.SiteName}</div>
-                 <div class="fs-1 p-4 border border-5 border-dark bg-${status} w-100 ff-OpenSans">${d.AQI}</div>
+                 <div class="fs-1 p-4 border border-5 border-dark bg-${status} w-100 ff-OpenSans">
+                 ${!d.AQI? '<div class="spinner-border border-3  text-dark" role="status"></div>': d.AQI}
+                     
+                 </div>
               </div>              
             </div>`;
   });
