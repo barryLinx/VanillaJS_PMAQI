@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   entry: {
@@ -10,7 +11,13 @@ module.exports = {
     path: path.join(__dirname, 'dist'),
     filename: 'js/[name].[hash:8].js'
   },
-  optimization: {
+  optimization: {  
+      minimize: true,
+      minimizer: [
+        new TerserPlugin({
+          parallel: true,        
+        })
+      ],  
     splitChunks: {
       cacheGroups: {
         vendor: {
@@ -77,6 +84,11 @@ module.exports = {
       title: '空氣品質API_bootstrap-v5',
       template: './src/index.html',
       filename: 'main.html',
+      minify: { 
+        removeComments: true, // 移除註釋
+        collapseWhitespace: true, 
+        removeAttributeQuotes: true // 移除空格
+      },
       chunks: ['vendor', 'app']
     }),
     new Dotenv() 

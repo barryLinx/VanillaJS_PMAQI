@@ -137,7 +137,7 @@ function siteName_registered_Click() {
       let f = apiData.filter((el) => {
         return el.SiteName == sitename;
       });
-      console.log("f=>", f);
+      //console.log("f=>", f);
       SiteDetailUI(f[0]);
       SiteTitleUI(f);
     });
