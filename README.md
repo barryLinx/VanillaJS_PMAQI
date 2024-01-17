@@ -4,9 +4,8 @@
 
 ## 開發環境
 
-* vscode 
-* webpack-cli 
-
+* vscode
+* webpack-cli
 
 ## 打包工具
 
@@ -14,8 +13,8 @@
 
 ## 主要練習目的
 
-* js 開發思維 
+* js 開發思維
+
 > 資料Data、事件Event、介面UI
+
 * Promise 、 XMLHttpRequest 合併使用
-
-
