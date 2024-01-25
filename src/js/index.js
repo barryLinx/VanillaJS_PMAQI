@@ -1,5 +1,6 @@
 import "../scss/style.scss";
 import "../../node_modules/bootstrap/js/dist/dropdown";
+import {getData} from "./api";
 
 // 介面 Dom
 
@@ -16,46 +17,6 @@ const SiteName = document.querySelector("#area");
 let apiData;
 let fields;
 let unit;
-//api
-const url = `${process.env.URL}${process.env.API_KEY}`;
-
-/**
- * api 擷取資料
- * @param {*} method
- * @param {*} url
- * @returns
- */
-function sendHttpRequest(method, url) {
-  const promise = new Promise((resolve, reject) => {
-    const xhr = new XMLHttpRequest();
-    xhr.open(method, url, true);
-    xhr.responseType = "json"; //等於 JSON.parse(xhr.response);
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-        //console.log(xhr.response);
-        resolve(xhr.response);
-      }
-      if (xhr.status >= 400) {
-        reject(xhr.response);
-      }
-    };
-    xhr.onerror = () => {
-      console.error(xhr.statusText);
-      reject("出現錯誤(Error)");
-    };
-    xhr.send(null);
-  });
-  return promise;
-}
-
-//資料
-const getData = async () => {
-  //let data;
-  const data =  await sendHttpRequest("GET", url);  
-  //console.log(data);
-  // console.log(apiData);
-  return data;
-};
 
 //區域handle
 function area(data) {
@@ -125,7 +86,7 @@ function SiteNameUI(data) {
 function siteName_registered_Click() {
   const btnEf = [...document.querySelectorAll(".btn-ef")];
   btnEf.forEach((btn) => {
-    btn.addEventListener("click", (el) => {
+    btn.addEventListener("click", () => {
       let sitename = btn.dataset.site;
       let f = apiData.filter((el) => {
         return el.sitename == sitename;
