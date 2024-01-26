@@ -1,6 +1,6 @@
 # JS 地下城 - 5F - 全台空氣指標儀表板
 
-[demo](https://barrylinx.github.io/VanillaJS_PMAQI/dist/main.html)
+[demo](https://barrylinx.github.io/VanillaJS_PMAQI/dist/index.html)
 
 ## 開發環境
 
