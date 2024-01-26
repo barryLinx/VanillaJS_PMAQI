@@ -1,5 +1,5 @@
 //api
-const url = `${process.env.URL}${process.env.API_KEY}`;
+//const url = `${process.env.URL}${process.env.API_KEY}`;
 /**
  * api 擷取資料
  * @param {*} method
