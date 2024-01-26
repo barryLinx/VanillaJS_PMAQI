@@ -83,7 +83,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: '空氣品質API_bootstrap-v5',
       template: './src/index.html',
-      filename: 'main.html',
+      filename: 'index.html',
       minify: { 
         removeComments: true, // 移除註釋
         collapseWhitespace: true, 
