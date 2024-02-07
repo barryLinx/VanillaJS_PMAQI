@@ -14,6 +14,7 @@ const SiteDetailed = document.querySelector(".area-detailed");
 const SiteName = document.querySelector("#area");
 const overlay = document.querySelector(".overlay");
 
+
 //資料儲存
 let apiData;
 let fields;
@@ -187,21 +188,31 @@ function countyFliter(County = "高雄市") {
   };
 }
 
+function isOverlay(isdata){
+  if(!isdata) return overlay.style.transform='scale(1)';
+  if(isdata) return overlay.style.transform='scale(0)';
+}
+
+
 // init 事件
 document.addEventListener("DOMContentLoaded", async function (e) {
-
+  isOverlay(false);
   let d = await getData();
   
- // console.log("d = ",d);
-  if(!d){
-    overlay.style.transform='scale(1)';
-  }
-
-
+ //console.log("apiData = ", d);
+  
   apiData = d.records;
   fields = d.fields;
+
+  // if(apiData){
+  //   overlay.style.transform='scale(1)';
+  // }
   unit = fieldsHandel();
-  let { data, datetime } = countyFliter();
+  
+  let { data, datetime } = countyFliter();  
+  // if(data) overlay.style.transform='scale(0)';  
+  isOverlay(data);
+
   area(d.records);
   countyUI({ dateTime: datetime, County: data[0].County });
   SiteTitleUI(data);

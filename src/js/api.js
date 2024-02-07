@@ -37,14 +37,15 @@ function sendHttpRequest(method, url) {
 //const fastifyURL='';
 //資料
 export const getData = async () => {
-  //const url = `${process.env.URL}${process.env.API_KEY}`;
-  //let data;                            
-  const data =  await sendHttpRequest("GET", 'https://fastify-aqi-provide-barrylinx.vercel.app/api/aqi');  
-  //const data =  await sendHttpRequest("GET", url);
-  //const res = await fetch('https://fastify-aqi-provide.vercel.app/api/aqi');  
+  const url = `${process.env.URL}${process.env.API_KEY}`;
+  const data =  await sendHttpRequest("GET", url);
+
+//const data =  await sendHttpRequest("GET", 'https://fastify-aqi-provide-barrylinx.vercel.app/api/aqi');  
+
+  
   //console.log("data =",data);
   //console.log(res.json());
-  //const data = res.json();
+  //const data = res.json();  
   // console.log(apiData);
   return data;
 };
