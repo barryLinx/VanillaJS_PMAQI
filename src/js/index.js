@@ -12,6 +12,7 @@ const thSite = document.querySelector("#thSite");
 const thaqi = document.querySelector("#thaqi");
 const SiteDetailed = document.querySelector(".area-detailed");
 const SiteName = document.querySelector("#area");
+const overlay = document.querySelector(".overlay");
 
 //資料儲存
 let apiData;
@@ -29,6 +30,7 @@ function area(data) {
   areaUI([...result]);
 }
 
+/** UI Render */
 function areaUI(data) {
   let temp = '<option value="" disabled selected>請選擇地區</option>';
   data.forEach((el) => {
@@ -37,6 +39,7 @@ function areaUI(data) {
   selectdom.innerHTML = temp;
 }
 
+/**UI Render */
 function countyUI(param) {
   countySelect.textContent = param.county;
   countyDate.textContent = param.dateTime[0];
@@ -44,6 +47,7 @@ function countyUI(param) {
   // countySelect.textContent = param.name;
 }
 
+/**UI Render */
 function SiteTitleUI(data) {
   // let thdata = data || data[0];
   let bgClass = new RegExp(
@@ -63,6 +67,7 @@ function SiteTitleUI(data) {
   //SiteDetailed
 }
 
+/**UI Render */
 function SiteNameUI(data) {
   //SiteName.innerHtml;
   //console.log(data);
@@ -83,6 +88,7 @@ function SiteNameUI(data) {
   //  siteName_registered_Click();//事件註冊
 }
 
+/**事件Event */
 function siteName_registered_Click() {
   const btnEf = [...document.querySelectorAll(".btn-ef")];
   btnEf.forEach((btn) => {
@@ -99,7 +105,7 @@ function siteName_registered_Click() {
 }
 
 /**
- * 傳入 object
+ * 傳入 object ,UI Render
  * @param {*} data
  */
 function SiteDetailUI(data) {
@@ -116,7 +122,7 @@ function SiteDetailUI(data) {
   });
   SiteDetailed.innerHTML = str;
 }
-
+/**事件Event */
 function aqicolor(aqi) {
   let colorText = "";
   switch (aqi) {
@@ -145,7 +151,7 @@ function aqicolor(aqi) {
   }
   return colorText;  
 }
-
+/**事件Event */
 function fieldsHandel() {
   let unitname = ["so2", "o3", "co", "pm10", "pm2.5", "no2", "nox"];
   let uarry = [];
@@ -169,7 +175,7 @@ function fieldsHandel() {
   });
   return uarry;
 }
-
+/**事件Event */
 function countyFliter(County = "高雄市") {
   let f = apiData.filter((el) => {
     return el.county == County;
@@ -185,7 +191,13 @@ function countyFliter(County = "高雄市") {
 document.addEventListener("DOMContentLoaded", async function (e) {
 
   let d = await getData();
-  //console.log("d = ",d);
+  
+ // console.log("d = ",d);
+  if(!d){
+    overlay.style.transform='scale(1)';
+  }
+
+
   apiData = d.records;
   fields = d.fields;
   unit = fieldsHandel();

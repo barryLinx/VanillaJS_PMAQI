@@ -1,5 +1,5 @@
 //api
-//const url = `${process.env.URL}${process.env.API_KEY}`;
+
 /**
  * api 擷取資料
  * @param {*} method
@@ -21,7 +21,12 @@ function sendHttpRequest(method, url) {
       }
     };
     xhr.onerror = () => {
-      console.error(xhr.statusText);
+      //console.error(xhr.statusText);
+    // //   if(xhr.statusText.startsWith("Access to XMLHttpRequest ")){
+    // //     reject(xhr.statusText);
+    // //     //pasre the string to check error code
+    // //     //and take appropriate actions
+    // // }
       reject("出現錯誤(Error)");
     };
     xhr.send(null);
@@ -32,8 +37,10 @@ function sendHttpRequest(method, url) {
 //const fastifyURL='';
 //資料
 export const getData = async () => {
+  //const url = `${process.env.URL}${process.env.API_KEY}`;
   //let data;                            
   const data =  await sendHttpRequest("GET", 'https://fastify-aqi-provide-barrylinx.vercel.app/api/aqi');  
+  //const data =  await sendHttpRequest("GET", url);
   //const res = await fetch('https://fastify-aqi-provide.vercel.app/api/aqi');  
   //console.log("data =",data);
   //console.log(res.json());
