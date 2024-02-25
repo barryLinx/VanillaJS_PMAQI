@@ -39,7 +39,7 @@ function sendHttpRequest(method, url) {
 export const getData = async () => {
   // const url = `${process.env.URL}${process.env.API_KEY}`;
   // const data =  await sendHttpRequest("GET", url);
-const data =  await sendHttpRequest("GET", 'https://fastify-aqi-provide-barrylinx.vercel.app/api/aqi');  
+const data =  await sendHttpRequest("GET", 'https://fastify-aqi-provide.vercel.app/api/aqi');  
   
   //console.log("data =",data);
   //console.log(res.json());
