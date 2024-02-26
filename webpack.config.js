@@ -9,7 +9,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'js/[name].[hash:8].js'
+    filename: 'js/[name].js'
   },
   optimization: {  
       minimize: true,
